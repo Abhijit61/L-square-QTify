@@ -4,4 +4,7 @@
   color: #34C94B;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 50px;
 }
