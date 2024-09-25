@@ -2,8 +2,9 @@
   border-radius: 10%;
   background-color: #121212;
   color: #34C94B;
+  font-family: 'Poppins', sans-serif;
 }
 
-.button:hover{
+.button :hover{
   cursor: pointer;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Hero.module.css";
 
 function Hero() {
+  console.log("entered hero");
   return (
     <div className={styles.hero}>
       <div>
@@ -10,7 +11,7 @@ function Hero() {
       </div>
       <div>
         <img
-          src={require("../../assets/hero_headphones.png")}
+          src={require("../assets/hero_headphones.png")}
           width={212}
           alt="headphones"
         />

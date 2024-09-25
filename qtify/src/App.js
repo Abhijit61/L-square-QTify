@@ -1,13 +1,13 @@
-import Navbar from "./Navbar/Navbar"
+
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Parent from "./Parent"
 
 function App() {
-  let emptystr = "";
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navbar searchData={emptystr}/>} />
+        <Route path="/" element={<Parent />} />
       </Routes>
     </Router>
   );
