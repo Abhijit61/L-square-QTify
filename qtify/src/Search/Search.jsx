@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./Search.module.css";
 import { ReactComponent as SearchIcon } from "../assets/search-icon.svg";
-import useAutocomplete from "@mui/base/useAutocomplete";
+import {useAutocomplete} from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
-import { truncate } from "../helpers/helpers";
 import { useNavigate } from "react-router-dom";
-import { Tooltip } from "@mui/material";
 
 const Listbox = styled("ul")(({ theme }) => ({
   width: "100%",
@@ -100,7 +98,6 @@ function Search({ searchData, placeholder }) {
                   <p className={styles.albumTitle}>{option.title}</p>
 
                   <p className={styles.albumArtists}>
-                    {truncate(artists.join(", "), 40)}
                   </p>
                 </div>
               </li>
