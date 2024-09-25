@@ -6,6 +6,8 @@ import Search from "../Search/Search";
 import styles from "./Navbar.module.css";
 
 function Navbar({ searchData }) {
+  console.log("abhijit");
+  console.log(searchData);
   return (
     <nav className={styles.navbar}>
       <Link to="/">
