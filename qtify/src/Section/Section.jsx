@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useEffect,useState } from 'react';
 import Mycard  from '../Mycard/Mycard';
 
-const Section = () => {
+const Section = ({name}) => {
   const [res,setres] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Section = () => {
   return (
     <div className={Styles.section}>
     <div className={Styles.header}>
-      <h3 className={Styles.headtitle}>Top Albums</h3>
+      <h3 className={Styles.headtitle}>{name}</h3>
       <button className={Styles.collapsebutton}>Collapse</button>
     </div>
     <div className={Styles.grid}>
