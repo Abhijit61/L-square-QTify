@@ -1,0 +1,30 @@
+.section{
+  width: 1384px;
+  height: 296px;
+  position: absolute;
+  top: 368px;
+  left: 31px;
+  gap: 32px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headtitle{
+  color: white;
+}
+
+.collapsebutton{
+  background-color: #121212;
+  color: #34C94B;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 3 columns of equal width */
+  gap: 10px; /* Space between grid items */
+
+}
