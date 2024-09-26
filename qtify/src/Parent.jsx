@@ -13,8 +13,8 @@ function Parent () {
       <Navbar searchData={emptystr}/>
       <Hero />
       <div className={Styles.divele}>
-      <Section name="Top Albums"/>
-      <Section name="New Albums"/>
+      <Section name="Top Albums" url="https://qtify-backend-labs.crio.do/albums/top"/>
+      <Section name="New Albums" url="https://qtify-backend-labs.crio.do/albums/new"/>
       </div>
     </div>
   );
