@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button, CardActions, Chip } from '@mui/material';
 import Styles from "./Mycard.module.css";
 
-const Mycard = ({image,follows,title,songs}) => {
+const Mycard = ({name,image,follows,title,songs}) => {
   return (
     <>
     <Card className={Styles.Card}>
@@ -14,7 +14,13 @@ const Mycard = ({image,follows,title,songs}) => {
       />
       <CardContent>
         {/* Chip component inside CardContent */}
-        <Chip label={`${follows} Follows`} className={Styles.Chip}/> 
+        {
+          name==="Songs" ? (
+            <Chip label={`${follows} likes`} className={Styles.Chip}/> 
+          ) : (
+            <Chip label={`${follows} Follows`} className={Styles.Chip}/> 
+          )
+        }
         <Typography variant="p" component="div">
         {title}
         </Typography>    

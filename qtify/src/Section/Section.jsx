@@ -6,7 +6,9 @@ import Mycard  from '../Mycard/Mycard';
 import { Collapse } from '@mui/material';
 import MyCarousel from "../Carousel/MyCarousel"
 
-const Section = ({name,url}) => {
+const Section = ({name,url,genre}) => {
+  console.log("genre:")
+  console.log(genre);
   const [res,setres] = useState([]);
   const [buttonname,setbuttoname] = useState("Show all")
 
@@ -36,19 +38,27 @@ const Section = ({name,url}) => {
     <div className={Styles.section}>
     <div className={Styles.header}>
       <h3 className={Styles.headtitle}>{name}</h3>
-      <button className={Styles.collapsebutton} onClick={handleclick}>{buttonname}</button>
+      {name!=="Songs" && <button className={Styles.collapsebutton} onClick={handleclick}>{buttonname}</button>}
     </div>
     {
-      buttonname ==="Collapse" ? (
-        <div className={Styles.grid}>
-      {
-        res.map((item) => (
-          <Mycard image={item.image} follows={item.follows} songs={item.songs} title={item.title}/>
-        ))
-      }
-    </div>
-      ):(
-        <MyCarousel data={res}/>
+      name==="Songs" ? (
+        <>
+          {genre==="All" ? (<MyCarousel name={name} data={res} />) : (
+            <MyCarousel name={name} data={res.filter( item => item.genre.label===genre)} />
+          )}
+        </>
+      ) : (
+        buttonname ==="Collapse" ? (
+          <div className={Styles.grid}>
+          {
+            res.map((item) => (
+              <Mycard image={item.image} follows={item.follows} songs={item.songs} title={item.title}/>
+            ))
+          }
+      </div>
+        ):(
+          <MyCarousel name={name} data={res}/>
+        )
       )
     }
     

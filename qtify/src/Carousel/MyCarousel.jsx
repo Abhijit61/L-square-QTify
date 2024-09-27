@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules';
 import Mycard  from '../Mycard/Mycard';
 
 
-const MyCarousel = ({data}) => {
+const MyCarousel = ({name , data}) => {
   
   return (
     <Swiper
@@ -48,11 +48,23 @@ const MyCarousel = ({data}) => {
         },
       }}
     >
-    {data.map((item,index) => (
-        <SwiperSlide key={index}>
-          <Mycard image={item.image} follows={item.follows} songs={item.songs} title={item.title}/>
-        </SwiperSlide>
-    ))}
+
+    {
+      name==="Songs" ? (
+        data.map((item,index) => (
+          <SwiperSlide key={index}>
+            <Mycard name={name} image={item.image} follows={item.likes} songs={item.songs} title={item.title}/>
+          </SwiperSlide>
+      ))
+      ) : (
+        data.map((item,index) => (
+          <SwiperSlide key={index}>
+            <Mycard name={name} image={item.image} follows={item.follows} songs={item.songs} title={item.title}/>
+          </SwiperSlide>
+      ))
+      )
+    }
+    
     </Swiper>
   );
 }
